@@ -22,3 +22,5 @@ while (!int.TryParse(entrada, out minutos) || minutos < 0)
 segundos = minutos * 60;
 
 Console.WriteLine($"Son {segundos} segundos.");
+
+Console.WriteLine("Gracias por utilizar este programa.");
