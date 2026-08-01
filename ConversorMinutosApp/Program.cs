@@ -4,23 +4,49 @@
  */
 
 Console.WriteLine("CONVERSOR DE MINUTOS EN SEGUNDOS\n");
-Console.WriteLine("Ingrese los minutos que quieres transformar en segundos:");
 
 int minutos;
 int segundos;
 
-string? entrada = Console.ReadLine();
+string? entrada;
 
-while (!int.TryParse(entrada, out minutos) || minutos < 0)
+string? aceptar;
+
+bool continuar = true;
+
+do
 {
-    Console.WriteLine("Valor no válido. Introduce un número igual o mayor" +
-        " que 0:");
+    Console.WriteLine("Ingrese los minutos que quieres transformar en segundos:");
 
     entrada = Console.ReadLine();
-}
 
-segundos = minutos * 60;
+    while (!int.TryParse(entrada, out minutos) || minutos < 0)
+    {
+        Console.WriteLine("Valor no válido. Introduce un número igual o mayor" +
+            " que 0:");
 
-Console.WriteLine($"Son {segundos} segundos.");
+        entrada = Console.ReadLine();
+    }
+
+    segundos = minutos * 60;
+
+    Console.WriteLine($"Son {segundos} segundos.");
+
+    //////////////////////////////////////////////
+
+    Console.WriteLine("¿Desea continuar? S/N");
+
+    aceptar = Console.ReadLine();
+
+    if (aceptar == "S" || aceptar == "s")
+    {
+        continuar = true;
+    }
+    else
+    {
+        continuar = false;
+    }
+
+} while (continuar);
 
 Console.WriteLine("Gracias por utilizar este programa.");
