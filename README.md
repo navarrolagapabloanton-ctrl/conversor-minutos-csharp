@@ -34,3 +34,40 @@ Desde la carpeta principal del repositorio:
 
 ```bash
 dotnet run --project ConversorMinutosApp/ConversorMinutosApp.csproj
+
+### 2. Clasificador de números
+
+Aplicación de consola que solicita un número entero y lo clasifica según su
+signo y su paridad.
+
+#### Funcionalidades
+
+- Comprueba que la entrada sea un número entero.
+- Indica si el número es positivo, negativo o cero.
+- Indica si el número es par o impar.
+- Permite probar varios números en una misma ejecución.
+- Separa las clasificaciones en métodos independientes.
+
+#### Ejecución
+
+```bash
+dotnet run --project ClasificadorNumeros/ClasificadorNumeros.csproj
+```
+
+## Conceptos practicados
+
+- Variables y tipos de datos.
+- Entrada y salida por consola.
+- `Console.ReadLine()`.
+- `int.TryParse()` y parámetros `out`.
+- Condicionales `if`, `else if` y `else`.
+- Operador módulo `%`.
+- Bucles `while` y `do while`.
+- Variables booleanas.
+- Creación y llamada de métodos.
+- Parámetros de métodos.
+- Control de versiones con Git y GitHub.
+
+## Estado
+
+Repositorio en desarrollo. Se añadirán nuevos ejercicios progresivamente.
