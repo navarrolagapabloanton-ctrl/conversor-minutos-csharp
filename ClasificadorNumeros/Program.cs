@@ -10,7 +10,6 @@
 Console.WriteLine("CLASIFICADOR DE NÚMEROS\n");
 
 bool continuar = true;
-string? confirmar;
 
 do
 {
@@ -25,8 +24,21 @@ do
         entrada = Console.ReadLine();
     }
 
-    // Es positivo, negativo o 0.
+    MostrarSigno(numero);
 
+    MostrarParidad(numero);
+
+    Console.WriteLine("¿Quieres probar con otro número? S/N");
+
+    string? confirmar = Console.ReadLine();
+
+    continuar = confirmar == "S" || confirmar == "s";
+
+} while (continuar);
+
+//Método dice si es positivo, negativo o 0.
+static void MostrarSigno(int numero)
+{
     if (numero > 0)
     {
         Console.WriteLine("El número es positivo.");
@@ -39,9 +51,11 @@ do
     {
         Console.WriteLine("El número es 0.");
     }
+}
 
-    // Es par o impar.
-
+//Método dice si es par o impar.
+static void MostrarParidad(int numero)
+{
     if (numero % 2 == 0)
     {
         Console.WriteLine("El número es par.");
@@ -50,18 +64,4 @@ do
     {
         Console.WriteLine("El número es impar.");
     }
-
-    Console.WriteLine("¿Quieres probar con otro número? S/N");
-
-    confirmar = Console.ReadLine();
-
-    if (confirmar == "S" || confirmar == "s")
-    {
-        continuar = true;
-    }
-    else
-    {
-        continuar = false;
-    }
-} while (continuar);
-
+}
