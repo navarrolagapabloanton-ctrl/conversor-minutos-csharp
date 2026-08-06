@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversorMinutosApp", "Conv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasificadorNumeros", "ClasificadorNumeros\ClasificadorNumeros.csproj", "{3FAE96C2-D0DA-4A8E-9594-3BE1BE4C027A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraBasica", "CalculadoraBasica\CalculadoraBasica.csproj", "{FE2AD7CE-C8F6-B741-1805-084AE4662D95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3FAE96C2-D0DA-4A8E-9594-3BE1BE4C027A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FAE96C2-D0DA-4A8E-9594-3BE1BE4C027A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FAE96C2-D0DA-4A8E-9594-3BE1BE4C027A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

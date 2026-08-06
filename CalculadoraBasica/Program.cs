@@ -10,41 +10,16 @@
 
 Console.WriteLine("CALCULADORA MUY BÁSICA\n");
 
-Console.WriteLine("Ingresa un número: ");
+int num1 = LeerNumeroEntero("Ingresa el primer número: ");
 
-string? entrada1 = Console.ReadLine();
-int num1;
+int num2 = LeerNumeroEntero("Ingresa el segundo número: ");
 
-while (!int.TryParse(entrada1, out num1))
-{
-    Console.WriteLine("Valor no válido. Introduce un" +
-        " número entero.");
-    entrada1 = Console.ReadLine();
-}
+MostrarMenuOperaciones();
 
-Console.WriteLine("Ingresa el segundo número: ");
-
-string? entrada2 = Console.ReadLine();
-int num2;
-
-while (!int.TryParse(entrada2, out num2))
-{
-    Console.WriteLine("Valor no válido. Introduce un" +
-        " número entero.");
-    entrada2 = Console.ReadLine();
-}
-
-Console.WriteLine("¿Qué operación desea realizar?" +
-    " Elije símbolo: \n");
-Console.WriteLine("Sumar: + ");
-Console.WriteLine("Restar: - ");
-Console.WriteLine("Multiplicar: *");
-Console.WriteLine("Dividir: / ");
-
-string? entrada3 = Console.ReadLine();
+string? operacion = Console.ReadLine();
 int resultado;
 
-switch (entrada3)
+switch (operacion)
 {
     case "+":
         resultado = num1 + num2;
@@ -77,4 +52,31 @@ switch (entrada3)
         Console.WriteLine("El símbolo de la operación" +
             " introducida no es válida.");
         break;
+}
+
+static int LeerNumeroEntero(string mensaje)
+{
+    Console.WriteLine(mensaje);
+
+    string? entrada = Console.ReadLine();
+    int numero;
+
+    while(!int.TryParse(entrada, out numero))
+    {
+        Console.WriteLine("Valor no válido." +
+            " Introduce un número entero.");
+        entrada = Console.ReadLine();
+    }
+
+    return numero;
+}
+
+static void MostrarMenuOperaciones()
+{
+    Console.WriteLine("¿Qué operación desea realizar?" +
+    " Elige símbolo: \n");
+    Console.WriteLine("Sumar: + ");
+    Console.WriteLine("Restar: - ");
+    Console.WriteLine("Multiplicar: *");
+    Console.WriteLine("Dividir: / ");
 }
