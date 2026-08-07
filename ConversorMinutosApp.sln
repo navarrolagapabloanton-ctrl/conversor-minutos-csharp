@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasificadorNumeros", "Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraBasica", "CalculadoraBasica\CalculadoraBasica.csproj", "{FE2AD7CE-C8F6-B741-1805-084AE4662D95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablaMultiplicar", "TablaMultiplicar\TablaMultiplicar.csproj", "{BA9DF100-450D-493E-9549-E4D5A861B621}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2AD7CE-C8F6-B741-1805-084AE4662D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9DF100-450D-493E-9549-E4D5A861B621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9DF100-450D-493E-9549-E4D5A861B621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9DF100-450D-493E-9549-E4D5A861B621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9DF100-450D-493E-9549-E4D5A861B621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
