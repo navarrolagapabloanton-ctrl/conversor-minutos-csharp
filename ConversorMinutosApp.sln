@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraBasica", "Calcul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablaMultiplicar", "TablaMultiplicar\TablaMultiplicar.csproj", "{BA9DF100-450D-493E-9549-E4D5A861B621}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdivinaNumero", "AdivinaNumero\AdivinaNumero.csproj", "{32CD0BBF-1FCC-427D-847F-B3473D0A6162}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BA9DF100-450D-493E-9549-E4D5A861B621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA9DF100-450D-493E-9549-E4D5A861B621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA9DF100-450D-493E-9549-E4D5A861B621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32CD0BBF-1FCC-427D-847F-B3473D0A6162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CD0BBF-1FCC-427D-847F-B3473D0A6162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CD0BBF-1FCC-427D-847F-B3473D0A6162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CD0BBF-1FCC-427D-847F-B3473D0A6162}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
