@@ -17,27 +17,37 @@ Random random = new Random();
 
 int numeroSecreto = random.Next(1, 11);
 
-// PRUEBA
-Console.WriteLine(numeroSecreto);
-// PRUEBA
-
-Console.WriteLine("Ingrese un número entero del 1 al 10 para intentar" +
-    " adivinar el número secreto: ");
-
-int contadorIntentos = 0;
-string? entrada = Console.ReadLine();
-contadorIntentos++;
 int numero;
 
-while (!int.TryParse(entrada, out numero) || numero < 1 || numero > 10)
-{
-    Console.WriteLine("Valor no válido. Introduce un entero del 1 al 10");
-    entrada = Console.ReadLine();
-    contadorIntentos++;
-}
+int contadorIntentos = 0;
 
 do
 {
+    Console.WriteLine("Ingrese un número entero del 1 al 10 para intentar" +
+        " adivinar el número secreto: ");
 
+    string? entrada = Console.ReadLine();
+    contadorIntentos++;
+
+    while (!int.TryParse(entrada, out numero) || numero < 1 || numero > 10)
+    {
+        Console.WriteLine("Valor no válido. Introduce un entero del 1 al 10");
+        entrada = Console.ReadLine();
+        contadorIntentos++;
+    }
+
+    if (numero < numeroSecreto)
+    {
+        Console.WriteLine("El número secreto es mayor.");
+    }
+    else if (numero > numeroSecreto)
+    {
+        Console.WriteLine("El número secreto es menor.");
+    }
+    else
+    {
+        Console.WriteLine($"¡Correcto! El número secreto era el {numeroSecreto}.");
+        Console.WriteLine($"Intentos: {contadorIntentos}.");
+    }
 } while (numero != numeroSecreto);
 
