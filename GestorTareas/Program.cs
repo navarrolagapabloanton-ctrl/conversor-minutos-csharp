@@ -32,9 +32,18 @@ while (true)
     {
         case "1":
             Console.WriteLine("\nAñade una tarea: \n");
+
             entrada = Console.ReadLine();
+
+            while(string.IsNullOrWhiteSpace(entrada))
+            {
+                Console.WriteLine("Valor no válido." +
+                    " Introduzca otra tarea.");
+                entrada = Console.ReadLine();
+            }
+
             tarea.Add(entrada);
-            Console.WriteLine("Añadida tarea.");
+            Console.WriteLine("Tarea añadida.");
             break;
 
         case "2":
@@ -57,20 +66,26 @@ while (true)
 
             int numeroTarea;
 
-            while (!int.TryParse(entrada, out numeroTarea))
+            while (!int.TryParse(entrada, out numeroTarea) ||
+                numeroTarea > tarea.Count || numeroTarea < 1)
             {
                 Console.WriteLine("Valor no válido. Introduce el" +
                     " número de la tarea.");
                 entrada = Console.ReadLine();
             }
 
-            tarea.RemoveAt(numeroTarea + 1);
+            tarea.RemoveAt(numeroTarea - 1);
             Console.WriteLine("Tarea eliminada.");
             break;
 
         case "4":
             Console.WriteLine("Saliendo... ");
             return;
+
+        default:
+            Console.WriteLine("Valor no válido. " +
+                "Introduce un número del menú.");
+            break;
     }
 }
 
