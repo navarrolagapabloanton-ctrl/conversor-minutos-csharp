@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroGastos", "RegistroD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorVideojuegos", "GestorVideojuegos\GestorVideojuegos.csproj", "{7EF1626F-145D-4FE8-806E-80E6519AB578}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoCompra", "CarritoCompra\CarritoCompra.csproj", "{E3D43C8A-F36E-4C44-B214-8710804227FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{7EF1626F-145D-4FE8-806E-80E6519AB578}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF1626F-145D-4FE8-806E-80E6519AB578}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF1626F-145D-4FE8-806E-80E6519AB578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D43C8A-F36E-4C44-B214-8710804227FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D43C8A-F36E-4C44-B214-8710804227FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D43C8A-F36E-4C44-B214-8710804227FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D43C8A-F36E-4C44-B214-8710804227FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
