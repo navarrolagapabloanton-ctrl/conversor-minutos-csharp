@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorInventario", "GestorI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorAlumnos", "GestorAlumnos\GestorAlumnos.csproj", "{3B90411C-A8F9-492E-B875-9098CF1C88F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaPersonal", "BibliotecaPersonal\BibliotecaPersonal.csproj", "{F2706C33-B4DA-427F-96A1-F02C47993544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{3B90411C-A8F9-492E-B875-9098CF1C88F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B90411C-A8F9-492E-B875-9098CF1C88F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B90411C-A8F9-492E-B875-9098CF1C88F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2706C33-B4DA-427F-96A1-F02C47993544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2706C33-B4DA-427F-96A1-F02C47993544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2706C33-B4DA-427F-96A1-F02C47993544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2706C33-B4DA-427F-96A1-F02C47993544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
