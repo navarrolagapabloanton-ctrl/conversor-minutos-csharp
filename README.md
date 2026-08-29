@@ -1,183 +1,465 @@
-# Fundamentos de programación en C#
+# Ejercicios de C# 💻
 
-Repositorio con ejercicios sencillos realizados durante mi aprendizaje de
-fundamentos de programación en C#.
+Repositorio personal de aprendizaje y práctica de C#.
 
-El objetivo es practicar progresivamente conceptos básicos como variables,
-condicionales, bucles, métodos, validación de datos y control de versiones.
+Aquí voy guardando ejercicios realizados durante mi aprendizaje, desde programas básicos de consola hasta ejercicios con métodos, colecciones, clases y orientación a objetos.
 
-## Proyectos
-
-### 1. Conversor de minutos a segundos
-
-Aplicación de consola que solicita una cantidad de minutos y muestra su
-equivalencia en segundos.
-
-#### Funcionalidades
-
-- Convierte minutos en segundos.
-- Comprueba que la entrada sea un número entero.
-- Rechaza números negativos.
-- Permite realizar varias conversiones.
-- Permite finalizar mediante una respuesta S/N.
-
-#### Conceptos practicados
-
-- Variables.
-- `Console.ReadLine()`.
-- `int.TryParse()`.
-- Parámetros `out`.
-- Condicionales.
-- Bucles `while` y `do while`.
-- Variables booleanas.
-- Interpolación de cadenas.
+El objetivo del repositorio no es mostrar aplicaciones terminadas, sino reflejar mi progreso, practicar la resolución de problemas y afianzar los fundamentos de C#.
 
 ---
 
-### 2. Clasificador de números
+## 🧠 Conceptos practicados
 
-Aplicación de consola que solicita un número entero y lo clasifica según su
-signo y su paridad.
+A lo largo de los ejercicios he trabajado con:
 
-#### Funcionalidades
-
-- Comprueba que la entrada sea un número entero.
-- Indica si el número es positivo, negativo o cero.
-- Indica si el número es par o impar.
-- Permite probar varios números en una misma ejecución.
-- Separa las distintas comprobaciones mediante métodos.
-
-#### Conceptos practicados
-
-- `if`, `else if` y `else`.
-- Operador módulo `%`.
-- Métodos `void`.
-- Parámetros de métodos.
-- Validación mediante `TryParse`.
-- Bucles.
-
----
-
-### 3. Calculadora básica
-
-Calculadora de consola que permite realizar operaciones sencillas con dos
-números enteros.
-
-#### Funcionalidades
-
-- Solicita y valida dos números enteros.
-- Permite sumar, restar, multiplicar y dividir.
-- Utiliza un `switch` para seleccionar la operación.
-- Evita la división entre cero.
-- Utiliza métodos para reutilizar la lectura y validación de números.
-- Separa la presentación del menú en un método independiente.
-
-#### Conceptos practicados
-
-- `switch`.
-- Métodos con valor de retorno.
-- `return`.
-- Métodos `void`.
-- Reutilización de código.
-- Validación de entrada.
-- División entre enteros.
+- Variables y tipos de datos
+- Condicionales (`if`, `else`, `switch`)
+- Bucles (`for`, `while`, `do-while`, `foreach`)
+- Validación de entradas con `TryParse`
+- Métodos y parámetros
+- Métodos con valores de retorno
+- Arrays
+- `List<T>`
+- `Dictionary<TKey, TValue>`
+- Manipulación de strings y caracteres
+- Acumuladores, máximos, mínimos y medias
+- Menús interactivos
+- Separación del programa en métodos
+- Clases y objetos
+- Propiedades
+- Constructores
+- Métodos de instancia
+- Objetos como parámetros de otros métodos
+- Listas de objetos
+- Interacción entre objetos
+- Principios básicos de orientación a objetos
 
 ---
 
-### 4. Tabla de multiplicar
+# 📚 Ejercicios realizados
 
-Aplicación que solicita un número entero y muestra su tabla de multiplicar
-desde el 1 hasta el 10.
+## 01 - Conversor de minutos
 
-#### Funcionalidades
+Conversión de minutos a segundos con validación de entrada y posibilidad de repetir el programa.
 
-- Comprueba que la entrada sea un número entero.
-- Muestra automáticamente las diez multiplicaciones.
-- Utiliza métodos para separar la lectura del número y la presentación
-  de la tabla.
-
-#### Conceptos practicados
-
-- Bucle `for`.
-- Contadores.
-- Métodos con parámetros.
-- Métodos con `return`.
-- Interpolación de cadenas.
+**Conceptos:**
+- `TryParse`
+- `do-while`
+- Validación
+- Variables booleanas
 
 ---
 
-### 5. Adivina el número
+## 02 - Clasificador de números
 
-Pequeño juego de consola en el que el programa genera aleatoriamente un número
-entre 1 y 10 y el usuario debe intentar adivinarlo.
+Clasifica un número según sea:
 
-#### Funcionalidades
+- Positivo
+- Negativo
+- Cero
+- Par
+- Impar
 
-- Genera un número aleatorio.
-- Solicita números entre 1 y 10.
-- Valida la entrada del usuario.
-- Indica si el número secreto es mayor o menor.
-- Repite hasta que el usuario acierta.
-- Cuenta todos los intentos realizados, incluyendo entradas no válidas.
-
-#### Conceptos practicados
-
-- `Random`.
-- Estado del programa.
-- Bucles `do while`.
-- Condiciones de salida.
-- Contadores.
-- Comparaciones.
-- Validación combinada de tipo y rango.
+Primer ejercicio dividido en métodos.
 
 ---
 
-## Conceptos practicados hasta ahora
+## 03 - Calculadora básica
 
-- Variables y tipos de datos.
-- Entrada y salida por consola.
-- `Console.ReadLine()` y `Console.WriteLine()`.
-- Conversión y validación con `int.TryParse()`.
-- Parámetros `out`.
-- Condicionales `if`, `else if` y `else`.
-- `switch`.
-- Operadores aritméticos.
-- Operador módulo `%`.
-- Bucles `while`, `do while` y `for`.
-- Variables booleanas.
-- Métodos `void`.
-- Métodos con parámetros.
-- Métodos con valor de retorno.
-- `return`.
-- Generación de números aleatorios con `Random`.
-- Reutilización y organización del código.
-- Control de versiones con Git y GitHub.
+Calculadora de consola con:
 
-## Ejecución
+- Suma
+- Resta
+- Multiplicación
+- División
+- Control de división entre cero
 
-Los proyectos pueden ejecutarse desde la carpeta raíz del repositorio.
+**Conceptos:**
+- Métodos
+- Parámetros
+- Valores de retorno
+- `switch`
 
-### Conversor de minutos
+---
 
-```bash
-dotnet run --project ConversorMinutosApp/ConversorMinutosApp.csproj
+## 04 - Tabla de multiplicar
 
-### Clasificador de números
+Generación de la tabla de multiplicar de un número.
 
-```bash
-dotnet run --project ClasificadorNumeros/ClasificadorNumeros.csproj
+**Concepto principal:** primer uso de bucles `for`.
 
-### Calculadora básica
+---
 
-```bash
-dotnet run --project CalculadoraBasica/CalculadoraBasica.csproj
+## 05 - Adivina el número
 
-### Tabla de multiplicar
+Juego en el que el programa genera un número aleatorio y el usuario debe adivinarlo.
 
-```bash
-dotnet run --project TablaMultiplicar/TablaMultiplicar.csproj
+Incluye pistas y contador de intentos.
 
-### Adivina el número
+**Conceptos:**
+- `Random`
+- Bucles
+- Comparaciones
+- Control del flujo
 
-```bash
-dotnet run --project AdivinaNumero/AdivinaNumero.csproj
+---
+
+## 06 - Analizador de notas
+
+Almacena varias notas y calcula:
+
+- Media
+- Nota máxima
+- Nota mínima
+
+**Conceptos:**
+- Arrays
+- Recorrido mediante bucles
+- Acumuladores
+
+---
+
+## 07 - Contador de vocales
+
+Analiza un texto y cuenta las diferentes vocales, incluyendo vocales acentuadas.
+
+**Conceptos:**
+- `string`
+- `char`
+- `foreach`
+- `switch`
+- Manipulación de texto
+
+---
+
+## 08 - Lista de la compra
+
+Permite introducir productos dinámicamente hasta finalizar la entrada.
+
+**Concepto principal:** introducción a `List<T>`.
+
+---
+
+## 09 - Gestor de tareas
+
+Aplicación de consola con menú para:
+
+- Añadir tareas
+- Mostrar tareas
+- Eliminar tareas
+- Salir
+
+Primer pequeño gestor CRUD mediante una lista.
+
+---
+
+## 10 - Cajero automático
+
+Simulación sencilla de una cuenta bancaria:
+
+- Consultar saldo
+- Ingresar dinero
+- Retirar dinero
+- Controlar saldo disponible
+
+**Concepto principal:** uso de `decimal` y modificación de estado.
+
+---
+
+## 11 - Registro de gastos
+
+Gestor que permite:
+
+- Añadir gastos
+- Mostrar gastos
+- Calcular estadísticas
+- Eliminar registros
+
+Incluye cálculo de:
+
+- Total
+- Media
+- Máximo
+- Mínimo
+
+---
+
+## 12 - Gestor de videojuegos
+
+Gestión de una colección de videojuegos mediante métodos independientes.
+
+Permite:
+
+- Añadir
+- Mostrar
+- Buscar
+- Eliminar
+
+**Objetivo principal:** dividir un programa grande en métodos más pequeños y reutilizables.
+
+---
+
+## 13 - Carrito de compra
+
+Carrito formado por una lista de precios.
+
+Calcula:
+
+- Subtotal
+- IVA
+- Total
+
+**Conceptos:**
+- Métodos con `return`
+- Paso de valores entre métodos
+- `List<decimal>`
+
+---
+
+## 14 - Agenda de contactos
+
+Agenda formada por nombres y teléfonos.
+
+Permite:
+
+- Añadir contactos
+- Mostrar contactos
+- Buscar
+- Eliminar
+
+**Concepto principal:** introducción a `Dictionary<TKey, TValue>`.
+
+---
+
+## 15 - Gestor de inventario
+
+Inventario donde cada producto tiene una cantidad asociada.
+
+Permite:
+
+- Añadir productos
+- Aumentar stock
+- Consultar productos
+- Modificar cantidades
+- Eliminar productos
+
+**Conceptos:**
+- `Dictionary<string, int>`
+- Lectura y modificación de valores mediante claves
+
+---
+
+# 🧱 Orientación a objetos
+
+A partir de estos ejercicios comienzo a trabajar con clases y objetos.
+
+---
+
+## 16 - Gestor de alumnos
+
+Primera aplicación utilizando una clase propia:
+
+`Alumno`
+
+Cada alumno contiene:
+
+- Nombre
+- Nota
+
+La aplicación permite:
+
+- Añadir alumnos
+- Mostrar alumnos
+- Buscar
+- Calcular estadísticas
+- Eliminar
+
+**Conceptos:**
+- Clases
+- Objetos
+- Propiedades
+- `List<Alumno>`
+
+---
+
+## 17 - Biblioteca personal
+
+Gestión de libros mediante una clase `Libro`.
+
+Cada libro contiene:
+
+- Título
+- Autor
+- Estado de préstamo
+
+Permite:
+
+- Añadir libros
+- Mostrar biblioteca
+- Buscar
+- Prestar
+- Devolver
+
+**Conceptos:**
+- Constructores
+- Propiedades
+- Estado de los objetos
+- Operador ternario
+
+---
+
+## 18 - Cuenta bancaria
+
+Cuenta bancaria modelada mediante una clase.
+
+Cada cuenta tiene:
+
+- Titular
+- Saldo
+
+Y puede:
+
+- Ingresar dinero
+- Retirar dinero
+- Mostrar información
+
+**Conceptos:**
+- Métodos de instancia
+- Diferencia entre métodos `static` y métodos pertenecientes a objetos
+
+---
+
+## 19 - Combate RPG
+
+Pequeño sistema de combate mediante objetos `Personaje`.
+
+Los personajes pueden:
+
+- Recibir daño
+- Curarse
+- Comprobar si están vivos
+- Mostrar su estado
+
+**Conceptos:**
+- Estado de un objeto
+- Métodos que devuelven `bool`
+- Reutilización de métodos
+
+---
+
+## 20 - Transferencias bancarias
+
+Dos objetos `CuentaBancaria` pueden realizar transferencias entre ellos.
+
+Ejemplo:
+
+```csharp
+cuentaPablo.Transferir(cuentaLaura, cantidad);
+
+```
+
+**Conceptos:**
+
+- Objetos como parámetros
+- Interacción entre objetos
+- Modificación del estado de varios objetos
+- Ámbito de variables dentro de bloques `{ }`
+
+---
+
+## 21 - Arena RPG
+
+Sistema formado por varios personajes almacenados en una lista:
+
+```csharp
+List<Personaje> personajes = new List<Personaje>();
+```
+
+Permite:
+
+- Mostrar personajes
+- Elegir atacante
+- Elegir objetivo
+- Atacar
+- Recibir daño
+- Curar personajes
+- Gestionar personajes vivos y muertos
+
+Ejemplo:
+
+```csharp
+Personaje atacante = personajes[numeroAtacante - 1];
+Personaje objetivo = personajes[numeroObjetivo - 1];
+
+atacante.Atacar(objetivo, danio);
+```
+
+El método `Atacar` recibe otro objeto `Personaje` como parámetro:
+
+```csharp
+public void Atacar(Personaje objetivo, int danio)
+{
+    objetivo.RecibirDanio(danio);
+}
+```
+
+**Conceptos:**
+
+- Listas de objetos
+- Selección de objetos mediante índices
+- Objetos como argumentos
+- Interacción entre objetos
+- Métodos de instancia
+- Métodos que llaman a métodos de otros objetos
+- Métodos que devuelven `bool`
+- Separación de responsabilidades entre métodos
+- Gestión del estado de los objetos
+
+---
+
+# Codewars
+
+También utilizo Codewars para practicar pequeños problemas de programación y mejorar mi capacidad para plantear soluciones.
+
+Algunas katas realizadas:
+
+- Square Sum
+- Boolean to Word
+- Sentence Smash
+- Convert Number to Reversed Array of Digits
+- Reversed Sequence
+- Rock Paper Scissors
+
+Esta sección irá creciendo a medida que complete nuevas katas y ejercicios.
+
+---
+
+# Proyectos
+
+Tras practicar los fundamentos de C# y comenzar con orientación a objetos, el siguiente objetivo es aplicar estos conocimientos en aplicaciones más completas.
+
+Actualmente estoy desarrollando proyectos independientes orientados a portfolio utilizando C# y .NET.
+
+Estos proyectos se mantienen en repositorios separados de este repositorio de ejercicios.
+
+---
+
+# Tecnologías y herramientas
+
+- C#
+- .NET
+- Visual Studio
+- Git
+- GitHub
+
+---
+
+# Sobre este repositorio
+
+Los ejercicios están realizados como parte de mi proceso de aprendizaje.
+
+El código refleja mi evolución: algunos ejercicios podrían resolverse de forma más corta o utilizando técnicas más avanzadas, pero he preferido mantener las soluciones acordes a los conocimientos que tenía en cada momento.
+
+De esta forma, el repositorio sirve también como registro de mi progreso como desarrollador.
+
+El objetivo no es únicamente llegar a la solución, sino comprender progresivamente cómo estructurar programas, dividir problemas en partes más pequeñas y utilizar las herramientas del lenguaje de forma cada vez más natural.
