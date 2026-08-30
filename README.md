@@ -1,4 +1,4 @@
-# Ejercicios de C# 💻
+# Ejercicios de C#
 
 Repositorio personal de aprendizaje y práctica de C#.
 
@@ -8,7 +8,7 @@ El objetivo del repositorio no es mostrar aplicaciones terminadas, sino reflejar
 
 ---
 
-## 🧠 Conceptos practicados
+## Conceptos practicados
 
 A lo largo de los ejercicios he trabajado con:
 
@@ -36,7 +36,7 @@ A lo largo de los ejercicios he trabajado con:
 
 ---
 
-# 📚 Ejercicios realizados
+# Ejercicios realizados
 
 ## 01 - Conversor de minutos
 
@@ -249,7 +249,7 @@ Permite:
 
 ---
 
-# 🧱 Orientación a objetos
+# Orientación a objetos
 
 A partir de estos ejercicios comienzo a trabajar con clases y objetos.
 
