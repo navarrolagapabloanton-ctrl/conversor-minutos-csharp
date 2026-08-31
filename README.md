@@ -421,16 +421,59 @@ public void Atacar(Personaje objetivo, int danio)
 
 También utilizo Codewars para practicar pequeños problemas de programación y mejorar mi capacidad para plantear soluciones.
 
-Algunas katas realizadas:
+### Count of positives / sum of negatives
 
-- Square Sum
-- Boolean to Word
-- Sentence Smash
-- Convert Number to Reversed Array of Digits
-- Reversed Sequence
-- Rock Paper Scissors
+Dado un array de enteros, el ejercicio consiste en devolver otro array donde:
 
-Esta sección irá creciendo a medida que complete nuevas katas y ejercicios.
+- El primer elemento contiene el número de valores positivos.
+- El segundo elemento contiene la suma de los valores negativos.
+- El `0` no se considera positivo ni negativo.
+- Si el array está vacío o es `null`, se devuelve un array vacío.
+
+Ejemplo de parte de la solución:
+
+```csharp
+if (input == null)
+{
+    return [];
+}
+
+if (input.Length == 0)
+{
+    return [];
+}
+
+int positiveCount = 0;
+int negativeSum = 0;
+
+for (int i = 0; i < input.Length; i++)
+{
+    if (input[i] > 0)
+    {
+        positiveCount++;
+    }
+
+    if (input[i] < 0)
+    {
+        negativeSum += input[i];
+    }
+}
+```
+
+**Conceptos reforzados:**
+
+- Comprobación de `null` antes de acceder a un objeto.
+- Diferencia entre un array `null` y un array vacío.
+- Uso de `input.Length`.
+- Recorrido de arrays mediante `for`.
+- Uso de contadores.
+- Uso de acumuladores.
+- Arrays como valor de retorno.
+- Sintaxis moderna `[]` para devolver un array vacío.
+
+---
+
+Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
 
