@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArenaRPG", "ArenaRPG\ArenaR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Countofpositives-sumofnegatives", "Countofpositives-sumofnegatives\Countofpositives-sumofnegatives.csproj", "{DA1D0082-20F8-4444-8BB5-373F666C8858}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxAndMinOfAList", "MaxAndMinOfAList\MaxAndMinOfAList.csproj", "{B25F80A9-0CB6-4070-B2DE-E87F38693D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{DA1D0082-20F8-4444-8BB5-373F666C8858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1D0082-20F8-4444-8BB5-373F666C8858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1D0082-20F8-4444-8BB5-373F666C8858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25F80A9-0CB6-4070-B2DE-E87F38693D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25F80A9-0CB6-4070-B2DE-E87F38693D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25F80A9-0CB6-4070-B2DE-E87F38693D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25F80A9-0CB6-4070-B2DE-E87F38693D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

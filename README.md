@@ -473,6 +473,59 @@ for (int i = 0; i < input.Length; i++)
 
 ---
 
+| Maximum and Minimum Values of a List | Arrays, métodos, valores de retorno, máximos y mínimos, recorrido con `for` |
+
+### Maximum and Minimum Values of a List
+
+Ejercicio basado en dos métodos que reciben un array de enteros:
+
+- `Max()` devuelve el valor más alto.
+- `Min()` devuelve el valor más bajo.
+
+La búsqueda comienza utilizando el primer elemento del array como valor inicial y recorriendo posteriormente el resto de elementos.
+
+```csharp
+public int Max(int[] list)
+{
+    int max = list[0];
+
+    for (int i = 1; i < list.Length; i++)
+    {
+        if (max < list[i])
+        {
+            max = list[i];
+        }
+    }
+
+    return max;
+}
+
+public int Min(int[] list)
+{
+    int min = list[0];
+
+    for (int i = 1; i < list.Length; i++)
+    {
+        if (min > list[i])
+        {
+            min = list[i];
+        }
+    }
+
+    return min;
+}
+```
+
+**Conceptos reforzados:**
+
+- Inicialización de máximos y mínimos utilizando el primer elemento del array.
+- Recorrido de arrays mediante `for`.
+- Comparación y actualización de valores.
+- Métodos que devuelven un `int`.
+- Evitar comparar innecesariamente `list[0]` consigo mismo comenzando el bucle en `i = 1`.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
