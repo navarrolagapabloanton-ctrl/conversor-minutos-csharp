@@ -579,6 +579,90 @@ class Program
 * Validación de entradas mediante `string.IsNullOrWhiteSpace()`.
 * Separación entre la lógica de la kata y el código utilizado para probarla en consola.
 
+---
+
+## Validate PIN Code — 7 kyu
+
+Los cajeros automáticos solo aceptan códigos PIN de **4 o 6 dígitos**.
+
+La función debe devolver:
+
+- `true` si el PIN tiene exactamente 4 o 6 caracteres y todos son dígitos.
+- `false` en cualquier otro caso.
+
+### Solución
+
+```csharp
+public class Kata
+{
+    public static bool ValidatePin(string pin)
+    {
+        if (pin.Length == 4 || pin.Length == 6)
+        {
+            foreach (char character in pin)
+            {
+                if (!char.IsDigit(character))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+```
+
+### Versión ejecutable
+
+Para probar la kata desde consola añadí validación de entrada:
+
+```csharp
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese un PIN.");
+
+        string? entrada = Console.ReadLine();
+
+        while (string.IsNullOrWhiteSpace(entrada))
+        {
+            Console.WriteLine("Valor no válido. Introduce otro valor.");
+            entrada = Console.ReadLine();
+        }
+
+        Console.WriteLine(Kata.ValidatePin(entrada));
+    }
+}
+```
+
+### Conceptos reforzados
+
+- Uso de `.Length` para conocer la longitud de un `string`.
+- Recorrido de un `string` carácter a carácter mediante `foreach`.
+- Uso del tipo `char`.
+- Comprobación de caracteres numéricos mediante `char.IsDigit()`.
+- Uso de `return false` para detener el método al encontrar un carácter inválido.
+- Uso de expresiones booleanas como condiciones.
+- Validación de entradas mediante `string.IsNullOrWhiteSpace()`.
+- Diferencia entre comprobar si un texto puede convertirse en número con `TryParse()` y comprobar si está formado exclusivamente por dígitos.
+
+### Aprendizaje
+
+Inicialmente utilicé `int.TryParse()` para comprobar si el PIN era numérico.
+
+Sin embargo, `TryParse()` comprueba si una cadena puede interpretarse como un número entero y puede aceptar valores como `+123` o `-123`.
+
+En esta kata era necesario comprobar algo más específico: que **cada carácter del PIN fuese un dígito**.
+
+Por ello, recorrí el `string` con un `foreach` y utilicé `char.IsDigit()` para validar cada carácter.
+
+---
 
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
