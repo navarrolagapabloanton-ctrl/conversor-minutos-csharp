@@ -526,6 +526,60 @@ public int Min(int[] list)
 
 ---
 
+## Are You Playing Banjo?
+
+La función recibe un nombre y comprueba si su primera letra es una **R**, independientemente de que esté escrita en mayúscula o minúscula.
+
+Si empieza por `R`, devuelve que esa persona toca el banjo. En caso contrario, devuelve que no lo toca.
+
+### Solución
+
+```csharp
+class Kata
+{
+    public static string AreYouPlayingBanjo(string name)
+    {
+        return name.ToLower()[0] == 'r'
+            ? name + " plays banjo"
+            : name + " does not play banjo";
+    }
+}
+```
+
+### Versión ejecutable
+
+Para probar la kata desde Visual Studio añadí un `Main` que solicita un nombre y comprueba que la entrada no esté vacía antes de llamar al método:
+
+```csharp
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Ingresa tu nombre:");
+        string? entrada = Console.ReadLine();
+
+        while (string.IsNullOrWhiteSpace(entrada))
+        {
+            Console.WriteLine("Nombre no válido. Ingresa otro nombre.");
+            entrada = Console.ReadLine();
+        }
+
+        Console.WriteLine(Kata.AreYouPlayingBanjo(entrada));
+    }
+}
+```
+
+### Conceptos reforzados
+
+* Acceso a caracteres individuales de un `string` mediante índices.
+* Diferencia entre `string` y `char`.
+* Uso de `'r'` para representar un carácter y `"r"` para representar un string.
+* Conversión de un string a minúsculas mediante `ToLower()`.
+* Uso del operador ternario `condición ? valorSiTrue : valorSiFalse`.
+* Validación de entradas mediante `string.IsNullOrWhiteSpace()`.
+* Separación entre la lógica de la kata y el código utilizado para probarla en consola.
+
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
