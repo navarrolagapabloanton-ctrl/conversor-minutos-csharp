@@ -664,6 +664,100 @@ Por ello, recorrí el `string` con un `foreach` y utilicé `char.IsDigit()` para
 
 ---
 
+## Is this a Triangle? — 7 kyu
+
+La función recibe tres valores enteros que representan las longitudes de los lados de un triángulo.
+
+Debe devolver:
+
+- `true` si los tres lados pueden formar un triángulo.
+- `false` si no cumplen la condición necesaria.
+
+Para que tres lados formen un triángulo, la suma de cada pareja de lados debe ser mayor que el lado restante.
+
+### Solución
+
+```csharp
+public class Triangle
+{
+    public static bool IsTriangle(int a, int b, int c)
+    {
+        return a + b > c && a + c > b && b + c > a;
+    }
+}
+```
+
+### Versión ejecutable
+
+Para probar la kata desde consola añadí un método reutilizable que solicita un número entero y valida la entrada:
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese el primer lado del triángulo:");
+        int a = LeerNumero();
+
+        Console.WriteLine("Ingrese el segundo lado del triángulo.");
+        int b = LeerNumero();
+
+        Console.WriteLine("Ingrese el tercer lado del triángulo.");
+        int c = LeerNumero();
+
+        Console.WriteLine(Triangle.IsTriangle(a, b, c));
+    }
+
+    public static int LeerNumero()
+    {
+        string? entrada = Console.ReadLine();
+
+        int num;
+
+        while (!int.TryParse(entrada, out num))
+        {
+            Console.WriteLine("Valor no válido. Introduce un entero.");
+            entrada = Console.ReadLine();
+        }
+
+        return num;
+    }
+}
+```
+
+### Conceptos reforzados
+
+- Uso de expresiones booleanas.
+- Operadores lógicos `&&`.
+- Comparaciones con `>`.
+- Devolución directa de un valor `bool` sin necesidad de usar `if`.
+- Uso de métodos auxiliares para evitar repetir código.
+- Validación de entrada mediante `int.TryParse()`.
+- Uso de parámetros y valores de retorno.
+- Separación entre la lógica de la kata y el código usado para probarla desde consola.
+
+### Aprendizaje
+
+Inicialmente podía plantearse la comprobación mediante un `if` o un operador ternario, pero la propia condición:
+
+```csharp
+a + b > c && a + c > b && b + c > a
+```
+
+ya devuelve directamente un valor booleano.
+
+Por ello, no es necesario escribir:
+
+```csharp
+return condicion ? true : false;
+```
+
+y se puede devolver directamente la expresión.
+
+También se creó el método `LeerNumero()` para reutilizar la validación de números enteros y evitar repetir tres veces el mismo bloque con `int.TryParse()`.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---

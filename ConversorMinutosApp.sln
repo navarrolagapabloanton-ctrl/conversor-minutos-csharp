@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreYouPlayingBanjo", "AreYo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateAPINCode", "ValidateAPINCode\ValidateAPINCode.csproj", "{E527E127-A210-4FA9-825F-CFFFA157F44D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Is-this-a-triangle", "Is-this-a-triangle\Is-this-a-triangle.csproj", "{973D5690-2986-4670-A605-9143C62399E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{E527E127-A210-4FA9-825F-CFFFA157F44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E527E127-A210-4FA9-825F-CFFFA157F44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E527E127-A210-4FA9-825F-CFFFA157F44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973D5690-2986-4670-A605-9143C62399E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973D5690-2986-4670-A605-9143C62399E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973D5690-2986-4670-A605-9143C62399E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973D5690-2986-4670-A605-9143C62399E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
