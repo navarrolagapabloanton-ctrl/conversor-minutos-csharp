@@ -1010,6 +1010,161 @@ De esta forma la operación continúa realizándose con valores `long` y se evit
 
 ---
 
+## Sum of Odd Numbers — 7 kyu
+
+La kata muestra un triángulo formado por números impares consecutivos:
+
+```text
+             1
+          3     5
+       7     9     11
+    13    15    17    19
+ 21    23    25    27    29
+```
+
+La función recibe el número de una fila `n` y debe devolver la suma de todos los números que contiene esa fila.
+
+Por ejemplo:
+
+```text
+Fila 1 → 1
+Suma = 1
+
+Fila 2 → 3 + 5
+Suma = 8
+
+Fila 4 → 13 + 15 + 17 + 19
+Suma = 64
+```
+
+### Solución
+
+```csharp
+public static class Kata
+{
+    public static long RowSumOddNumbers(long n)
+    {
+        long sum = 0;
+        long init = n * (n - 1) + 1;
+
+        for (long i = 0; i < n; i++)
+        {
+            sum += init + (2 * i);
+        }
+
+        return sum;
+    }
+}
+```
+
+### Versión ejecutable
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(Kata.RowSumOddNumbers(4));
+    }
+}
+```
+
+### Funcionamiento
+
+Primero se calcula cuál es el primer número de la fila:
+
+```csharp
+long init = n * (n - 1) + 1;
+```
+
+Por ejemplo, para la fila 4:
+
+```text
+4 × (4 - 1) + 1
+4 × 3 + 1
+13
+```
+
+Por tanto, la fila comienza en `13`.
+
+Como los números impares consecutivos aumentan de dos en dos, se recorre la fila mediante:
+
+```csharp
+for (long i = 0; i < n; i++)
+{
+    sum += init + (2 * i);
+}
+```
+
+Para `n = 4`:
+
+```text
+i = 0 → 13 + (2 × 0) = 13
+i = 1 → 13 + (2 × 1) = 15
+i = 2 → 13 + (2 × 2) = 17
+i = 3 → 13 + (2 × 3) = 19
+```
+
+Finalmente:
+
+```text
+13 + 15 + 17 + 19 = 64
+```
+
+### Conceptos reforzados
+
+- Uso de bucles `for`.
+- Uso de acumuladores.
+- Cálculo de posiciones mediante fórmulas.
+- Trabajo con secuencias de números impares.
+- Uso de variables de tipo `long`.
+- Diferencia entre el número de fila `n` y el índice utilizado dentro del bucle.
+- Resolución previa del problema mediante dibujo y búsqueda de patrones.
+
+### Aprendizaje
+
+Una de las dificultades del ejercicio fue interpretar correctamente que el enunciado indica que **las filas empiezan a numerarse desde 1**.
+
+Esto no significa que el índice del `for` tenga que comenzar también en `1`.
+
+En esta solución:
+
+```csharp
+for (long i = 0; i < n; i++)
+```
+
+`n` representa el número de la fila, mientras que `i` se utiliza únicamente para calcular la posición de cada número dentro de esa fila.
+
+También descubrí que el primer número de cada fila puede calcularse mediante:
+
+```csharp
+n * (n - 1) + 1
+```
+
+y que, a partir de ese número, los siguientes valores se obtienen sumando `2`.
+
+### Patrón matemático
+
+Después de resolverlo mediante el algoritmo anterior, se puede observar otro patrón:
+
+```text
+Fila 1 → 1   = 1³
+Fila 2 → 8   = 2³
+Fila 3 → 27  = 3³
+Fila 4 → 64  = 4³
+Fila 5 → 125 = 5³
+```
+
+Por tanto, la suma de cualquier fila `n` también puede calcularse directamente como:
+
+```csharp
+return n * n * n;
+```
+
+La solución con el bucle permite entender cómo se construye y se suma cada fila, mientras que la fórmula aprovecha directamente el patrón matemático.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
