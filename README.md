@@ -758,6 +758,102 @@ También se creó el método `LeerNumero()` para reutilizar la validación de n�
 
 ---
 
+## Vowel Count — 7 kyu
+
+La función recibe una cadena de texto formada por letras minúsculas y espacios y debe devolver el número total de vocales que contiene.
+
+Las vocales consideradas son:
+
+```text
+a, e, i, o, u
+```
+
+### Solución
+
+```csharp
+public static class Kata
+{
+    public static int GetVowelCount(string str)
+    {
+        int vowelCount = 0;
+
+        foreach (char character in str)
+        {
+            if ("aeiou".Contains(character))
+            {
+                vowelCount++;
+            }
+        }
+
+        return vowelCount;
+    }
+}
+```
+
+### Versión ejecutable
+
+Para probar la kata desde consola añadí una validación para evitar que el usuario introduzca una cadena vacía:
+
+```csharp
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Ingresa un texto:");
+
+        string? entrada = Console.ReadLine();
+
+        while (string.IsNullOrWhiteSpace(entrada))
+        {
+            Console.WriteLine("No puede estar el texto vacío.");
+            entrada = Console.ReadLine();
+        }
+
+        Console.WriteLine(Kata.GetVowelCount(entrada));
+    }
+}
+```
+
+### Conceptos reforzados
+
+- Recorrido de un `string` carácter a carácter mediante `foreach`.
+- Uso del tipo `char`.
+- Uso de un contador.
+- Incremento de variables mediante `++`.
+- Uso de `string.Contains()` para comprobar si una cadena contiene un determinado carácter.
+- Validación de entradas mediante `string.IsNullOrWhiteSpace()`.
+- Simplificación de condiciones largas.
+
+### Aprendizaje
+
+Inicialmente comprobé cada vocal individualmente:
+
+```csharp
+if (character == 'a' ||
+    character == 'e' ||
+    character == 'i' ||
+    character == 'o' ||
+    character == 'u')
+{
+    vowelCount++;
+}
+```
+
+Aunque esta solución funciona correctamente, puede simplificarse utilizando un `string` que contenga todas las vocales:
+
+```csharp
+if ("aeiou".Contains(character))
+{
+    vowelCount++;
+}
+```
+
+De esta forma, en lugar de realizar cinco comparaciones distintas, se comprueba directamente si el carácter actual está contenido dentro de `"aeiou"`.
+
+También reforcé la idea de que un `string` puede recorrerse carácter a carácter mediante un `foreach`.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
