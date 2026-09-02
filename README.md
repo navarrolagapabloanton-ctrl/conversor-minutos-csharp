@@ -854,6 +854,162 @@ También reforcé la idea de que un `string` puede recorrerse carácter a carác
 
 ---
 
+## Find the Next Perfect Square! — 7 kyu
+
+La función recibe un número entero no negativo.
+
+Debe comprobar si el número es un **cuadrado perfecto**, es decir, si su raíz cuadrada es un número entero.
+
+- Si es un cuadrado perfecto, devuelve el siguiente cuadrado perfecto.
+- Si no lo es, devuelve `-1`.
+
+Por ejemplo:
+
+```text
+121 = 11²
+
+El siguiente cuadrado perfecto es:
+
+12² = 144
+```
+
+Por tanto:
+
+```text
+121 → 144
+```
+
+Mientras que:
+
+```text
+72 → -1
+```
+
+porque `72` no es un cuadrado perfecto.
+
+### Solución
+
+```csharp
+using System;
+
+public class Kata
+{
+    public static long FindNextSquare(long num)
+    {
+        long sqr = (long)Math.Sqrt(num);
+
+        return sqr * sqr == num
+            ? (sqr + 1) * (sqr + 1)
+            : -1;
+    }
+}
+```
+
+### Versión ejecutable
+
+Para probar la kata desde consola añadí una entrada validada mediante `long.TryParse()`:
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(@"- Ingresa un número.
+- Se hará su raíz cuadrada.
+- Si no tiene decimales, se calculará la potencia al cuadrado del
+siguiente número.
+- Si no, el resultado será -1.");
+
+        string? entrada = Console.ReadLine();
+
+        long result;
+
+        while (!long.TryParse(entrada, out result))
+        {
+            Console.WriteLine("Ingrese un número entero.");
+            entrada = Console.ReadLine();
+        }
+
+        Console.WriteLine(Kata.FindNextSquare(result));
+    }
+}
+```
+
+### Conceptos reforzados
+
+- Cálculo de raíces cuadradas mediante `Math.Sqrt()`.
+- Conversión explícita o *casting* de `double` a `long`.
+- Comprobación de cuadrados perfectos.
+- Operador ternario.
+- Operaciones con números de tipo `long`.
+- Validación mediante `long.TryParse()`.
+- Strings multilínea mediante `@"..."`.
+- Diferencia entre realizar operaciones con enteros y con `double`.
+- Importancia de la precisión numérica al trabajar con números grandes.
+
+### Aprendizaje
+
+Inicialmente intenté encontrar la raíz cuadrada mediante un bucle:
+
+```csharp
+long square = 0;
+
+while (square * square < num)
+{
+    square++;
+}
+```
+
+Esta solución funciona, pero para números muy grandes puede necesitar una enorme cantidad de iteraciones y provocar que el programa tarde demasiado.
+
+Utilizando:
+
+```csharp
+Math.Sqrt(num)
+```
+
+se puede obtener directamente la raíz cuadrada.
+
+Como `Math.Sqrt()` devuelve un `double`, convierto el resultado a `long`:
+
+```csharp
+long sqr = (long)Math.Sqrt(num);
+```
+
+Después compruebo si realmente era un cuadrado perfecto multiplicando el entero obtenido por sí mismo:
+
+```csharp
+sqr * sqr == num
+```
+
+Si la condición se cumple, el siguiente cuadrado perfecto se obtiene incrementando la raíz en uno:
+
+```csharp
+(sqr + 1) * (sqr + 1)
+```
+
+### Problema encontrado con `Math.Pow()`
+
+En una primera versión utilicé:
+
+```csharp
+(long)Math.Pow(sqr, 2)
+```
+
+Aunque funcionaba para números pequeños, algunos tests con números muy grandes fallaban.
+
+`Math.Pow()` trabaja con valores `double`, y estos pueden perder precisión al representar enteros muy grandes.
+
+Por ello, para elevar al cuadrado un valor entero es preferible utilizar directamente:
+
+```csharp
+sqr * sqr
+```
+
+De esta forma la operación continúa realizándose con valores `long` y se evita la pérdida de precisión producida por `double`.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
