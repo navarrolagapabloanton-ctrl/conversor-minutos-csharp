@@ -1165,6 +1165,141 @@ La solución con el bucle permite entender cómo se construye y se suma cada fil
 
 ---
 
+## Two to One — 7 kyu
+
+La función recibe dos cadenas formadas únicamente por letras minúsculas de la `a` a la `z`.
+
+Debe devolver una nueva cadena que contenga todas las letras que aparecen en cualquiera de las dos cadenas:
+
+- Sin repetir caracteres.
+- Ordenadas alfabéticamente.
+
+Por ejemplo:
+
+```text
+s1 = "xyaabbbccccdefww"
+s2 = "xxxxyyyyabklmopq"
+
+Resultado:
+
+"abcdefklmopqwxy"
+```
+
+### Solución
+
+```csharp
+public class TwoToOne
+{
+    public static string Longest(string s1, string s2)
+    {
+        string s3 = s1 + s2;
+        string finalString = "";
+
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            if (s3.Contains(c))
+            {
+                finalString += c;
+            }
+        }
+
+        return finalString;
+    }
+}
+```
+
+### Versión ejecutable
+
+```csharp
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(
+            TwoToOne.Longest("lallave", "dealfredo")
+        );
+    }
+}
+```
+
+### Conceptos reforzados
+
+- Concatenación de cadenas mediante `+`.
+- Uso de `string.Contains()`.
+- Recorrido mediante un bucle `for`.
+- Uso del tipo `char`.
+- Comparación de caracteres.
+- Incremento de caracteres mediante `c++`.
+- Eliminación indirecta de caracteres repetidos.
+- Ordenación alfabética aprovechando el orden de los caracteres.
+- Construcción progresiva de un `string`.
+
+### Aprendizaje
+
+Inicialmente resolví el ejercicio creando manualmente un array con todas las letras del alfabeto:
+
+```csharp
+string[] abc =
+{
+    "a", "b", "c", "d", "e", "f", "g", "h",
+    "i", "j", "k", "l", "m", "n", "o", "p",
+    "q", "r", "s", "t", "u", "v", "w", "x",
+    "y", "z"
+};
+```
+
+Después recorría ese array y comprobaba mediante `Contains()` si cada letra aparecía en las dos cadenas concatenadas.
+
+La solución funcionaba, pero descubrí que no era necesario escribir manualmente todo el alfabeto.
+
+Los caracteres de `'a'` a `'z'` están ordenados consecutivamente, por lo que se pueden recorrer directamente:
+
+```csharp
+for (char c = 'a'; c <= 'z'; c++)
+{
+    if (s3.Contains(c))
+    {
+        finalString += c;
+    }
+}
+```
+
+De esta forma, el propio bucle garantiza dos cosas:
+
+1. Las letras se añaden en orden alfabético.
+2. Cada letra se comprueba una sola vez, por lo que no aparecen caracteres repetidos.
+
+### Primera solución
+
+Antes de simplificarlo, utilicé esta aproximación:
+
+```csharp
+string s3 = s1 + s2;
+string finalString = "";
+
+string[] abc =
+{
+    "a", "b", "c", "d", "e", "f", "g", "h",
+    "i", "j", "k", "l", "m", "n", "o", "p",
+    "q", "r", "s", "t", "u", "v", "w", "x",
+    "y", "z"
+};
+
+for (int i = 0; i < abc.Length; i++)
+{
+    if (s3.Contains(abc[i]))
+    {
+        finalString += abc[i];
+    }
+}
+
+return finalString;
+```
+
+Esta primera solución era válida y permitió llegar al algoritmo antes de conocer una forma más sencilla de recorrer directamente los caracteres del alfabeto.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
