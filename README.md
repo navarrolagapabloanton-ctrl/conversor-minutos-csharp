@@ -1300,6 +1300,182 @@ Esta primera solución era válida y permitió llegar al algoritmo antes de cono
 
 ---
 
+## 🔁 Mumbling — 7 kyu
+
+La función recibe una cadena de texto formada por letras.
+
+Debe construir una nueva cadena siguiendo estas reglas:
+
+- La primera letra aparece una vez.
+- La segunda letra aparece dos veces.
+- La tercera letra aparece tres veces.
+- Y así sucesivamente.
+- La primera letra de cada bloque debe estar en mayúscula.
+- El resto de letras del bloque deben estar en minúscula.
+- Cada bloque debe estar separado por un guion `-`.
+
+Por ejemplo:
+
+```text
+"abcd"
+
+A-Bb-Ccc-Dddd
+```
+
+### Solución
+
+```csharp
+public class Accumul
+{
+    public static string Accum(string s)
+    {
+        string accum = "";
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            accum += char.ToUpper(s[i]);
+
+            for (int f = 1; f <= i; f++)
+            {
+                accum += char.ToLower(s[i]);
+            }
+
+            if (i < s.Length - 1)
+            {
+                accum += "-";
+            }
+        }
+
+        return accum;
+    }
+}
+```
+
+### Versión ejecutable
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(Accumul.Accum("Juanjo"));
+    }
+}
+```
+
+### Funcionamiento
+
+El primer `for` recorre cada carácter de la cadena:
+
+```csharp
+for (int i = 0; i < s.Length; i++)
+```
+
+La primera copia de cada letra se añade en mayúscula:
+
+```csharp
+accum += char.ToUpper(s[i]);
+```
+
+Después, un segundo `for` añade las copias restantes en minúscula:
+
+```csharp
+for (int f = 1; f <= i; f++)
+{
+    accum += char.ToLower(s[i]);
+}
+```
+
+Por ejemplo, si `i = 3`:
+
+```text
+Primera letra → mayúscula
+
+D
+
+Después se añaden 3 letras minúsculas:
+
+d
+d
+d
+
+Resultado:
+
+Dddd
+```
+
+Finalmente se añade un guion entre bloques:
+
+```csharp
+if (i < s.Length - 1)
+{
+    accum += "-";
+}
+```
+
+La condición evita añadir un guion después del último bloque.
+
+### Conceptos reforzados
+
+- Recorrido de strings mediante `for`.
+- Acceso a caracteres mediante índices.
+- Uso de `char.ToUpper()`.
+- Uso de `char.ToLower()`.
+- Bucles anidados.
+- Construcción progresiva de strings.
+- Uso de condiciones para controlar separadores.
+- Relación entre el índice de una posición y el número de repeticiones.
+
+### Aprendizaje
+
+La solución utiliza dos bucles.
+
+El primero controla qué carácter se está procesando:
+
+```csharp
+for (int i = 0; i < s.Length; i++)
+```
+
+El segundo controla cuántas veces debe repetirse:
+
+```csharp
+for (int f = 1; f <= i; f++)
+```
+
+Como la primera copia ya se añade en mayúscula antes del segundo bucle, solo es necesario añadir `i` copias adicionales en minúscula.
+
+También fue necesario asegurar que las repeticiones estuvieran en minúscula mediante:
+
+```csharp
+char.ToLower(s[i])
+```
+
+ya que la cadena original puede contener letras mayúsculas o minúsculas.
+
+### Otra posibilidad
+
+Existe un constructor de `string` que permite repetir directamente un carácter:
+
+```csharp
+new string('a', 5)
+```
+
+produce:
+
+```text
+aaaaa
+```
+
+Por tanto, el segundo `for` podría sustituirse por:
+
+```csharp
+accum += new string(char.ToLower(s[i]), i);
+```
+
+Sin embargo, en esta solución mantengo el doble `for` porque permite ver de forma más explícita cómo se construye cada bloque.
+
+---
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
