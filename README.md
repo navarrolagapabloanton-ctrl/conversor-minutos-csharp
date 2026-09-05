@@ -1476,6 +1476,55 @@ Sin embargo, en esta solución mantengo el doble `for` porque permite ver de for
 
 ---
 
+# Jaden Case
+
+Ejercicio realizado en C# que transforma una frase haciendo que la primera letra de cada palabra aparezca en mayúscula.
+
+## Ejemplo
+
+Entrada:
+
+most trees are blue.
+
+Salida:
+
+Most Trees Are Blue.
+
+## Funcionamiento
+
+El programa recorre la frase carácter por carácter.
+
+1. Convierte la primera letra de la frase a mayúscula.
+2. Recorre el resto de caracteres mediante un bucle `for`.
+3. Cuando encuentra un espacio:
+   - Añade el espacio al nuevo texto.
+   - Convierte el siguiente carácter a mayúscula.
+   - Avanza una posición adicional porque ese carácter ya ha sido procesado.
+4. El resto de caracteres se añaden sin modificar.
+
+## Código principal
+
+```csharp
+public static string ToJadenCase(this string phrase)
+{
+    string newString = "" + char.ToUpper(phrase[0]);
+
+    for (int i = 1; i < phrase.Length; i++)
+    {
+        if (phrase[i] == ' ')
+        {
+            newString += " " + char.ToUpper(phrase[i + 1]);
+            i++;
+        }
+        else
+        {
+            newString += phrase[i];
+        }
+    }
+
+    return newString;
+}
+
 Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas herramientas del lenguaje.
 
 ---
@@ -1485,6 +1534,8 @@ Esta sección irá creciendo a medida que complete nuevas katas y aprenda nuevas
 Tras practicar los fundamentos de C# y comenzar con orientación a objetos, el siguiente objetivo es aplicar estos conocimientos en aplicaciones más completas.
 
 Actualmente estoy desarrollando proyectos independientes orientados a portfolio utilizando C# y .NET.
+
+---
 
 Estos proyectos se mantienen en repositorios separados de este repositorio de ejercicios.
 
